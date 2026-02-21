@@ -1,0 +1,541 @@
+/* ==================== VARIABLES ==================== */
+:root {
+    --primary: #4CAF50;
+    --primary-dark: #388E3C;
+    --primary-light: #C8E6C9;
+    --secondary: #FF9800;
+    --accent: #2196F3;
+    --danger: #F44336;
+    --success: #4CAF50;
+    --warning: #FFC107;
+    --text-dark: #212121;
+    --text-light: #757575;
+    --background: #F5F5F5;
+    --white: #FFFFFF;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* ==================== QR PAGE ==================== */
+.qr-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.qr-container {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+}
+
+/* ==================== LOGO ==================== */
+.qr-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.qr-logo i {
+    font-size: 2.2rem;
+}
+
+/* ==================== STATE CONTAINER ==================== */
+.state-container {
+    text-align: center;
+}
+
+.state-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 3rem;
+}
+
+.state-icon.success {
+    background: var(--primary-light);
+    color: var(--success);
+}
+
+.state-icon.error {
+    background: #FFEBEE;
+    color: var(--danger);
+}
+
+.state-icon.info {
+    background: #E3F2FD;
+    color: var(--accent);
+}
+
+.state-icon.warning {
+    background: #FFF8E1;
+    color: var(--warning);
+}
+
+.state-container h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.state-container p {
+    color: var(--text-light);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.redirect-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ==================== LOADING ==================== */
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--primary-light);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 25px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 35px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ==================== FORM HEADER ==================== */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--white);
+    font-size: 2.5rem;
+}
+
+.form-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.form-header p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* ==================== FORM SECTIONS ==================== */
+.form-section {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: var(--background);
+    border-radius: var(--radius-sm);
+}
+
+.form-section h3 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-section h3 i {
+    color: var(--primary);
+}
+
+/* ==================== FORM GROUPS ==================== */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* ==================== FORM NOTICE ==================== */
+.form-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #E3F2FD;
+    border-radius: var(--radius-sm);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-notice i {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 3px;
+}
+
+.form-notice p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+/* ==================== SUBMIT BUTTON ==================== */
+.btn-submit {
+    width: 100%;
+    padding: 18px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    background: var(--primary-dark);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==================== SUCCESS STATE ==================== */
+.success-details {
+    background: var(--background);
+    padding: 25px;
+    border-radius: var(--radius-sm);
+    margin: 25px 0;
+    text-align: left;
+}
+
+.success-details p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-dark);
+}
+
+.success-details p:last-child {
+    margin-bottom: 0;
+}
+
+.success-details i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* ==================== PET CARD (INFO PAGE) ==================== */
+.pet-card {
+    text-align: left;
+}
+
+.pet-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--background);
+}
+
+.pet-avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.pet-title h2 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.pet-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ==================== PET SECTION ==================== */
+.pet-section {
+    margin-bottom: 30px;
+}
+
+.pet-section h3 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pet-section h3 i {
+    color: var(--primary);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+    padding: 15px;
+    background: var(--background);
+    border-radius: var(--radius-sm);
+}
+
+.info-item i {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-top: 3px;
+}
+
+.info-item label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+/* ==================== LOCATION SECTION ==================== */
+.location-section {
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    padding: 25px;
+    border-radius: var(--radius-sm);
+}
+
+.location-section h3 {
+    color: var(--accent);
+}
+
+.location-section h3 i {
+    color: var(--accent);
+}
+
+.location-info {
+    text-align: center;
+    padding: 20px;
+}
+
+.loading-location {
+    color: var(--text-light);
+}
+
+.loading-location i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.location-details {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 15px;
+}
+
+.location-details p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-dark);
+}
+
+.location-details i {
+    color: var(--accent);
+}
+
+.location-map {
+    margin-top: 15px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+/* ==================== PET NOTICE ==================== */
+.pet-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: var(--primary-light);
+    border-radius: var(--radius-sm);
+    margin-top: 25px;
+}
+
+.pet-notice i {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-top: 3px;
+}
+
+.pet-notice p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 480px) {
+    .qr-container {
+        padding: 25px;
+    }
+    
+    .qr-logo {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .form-section {
+        padding: 20px;
+    }
+    
+    .pet-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .state-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+}

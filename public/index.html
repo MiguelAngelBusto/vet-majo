@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetQR - Chapitas Inteligentes para Mascotas</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <i class="fas fa-paw"></i>
+                <span>VetQR</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#como-funciona">Cómo Funciona</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="/admin" class="btn-admin"><i class="fas fa-lock"></i> Admin</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Carrusel -->
+    <section id="inicio" class="hero">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="/assets/images/carrusel-1.jpg" alt="Veterinaria">
+                <div class="carousel-content">
+                    <h1>Cuidamos a tu Mascota</h1>
+                    <p>Tecnología de vanguardia para la seguridad de tus mejores amigos</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/assets/images/carrusel-2.jpg" alt="Perro con QR">
+                <div class="carousel-content">
+                    <h1>Chapitas QR Inteligentes</h1>
+                    <p>Localiza a tu mascota en segundos si se pierde</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/assets/images/carrusel-3.jpg" alt="Gato con QR">
+                <div class="carousel-content">
+                    <h1>Protección Total</h1>
+                    <p>Tu mascota siempre conectada contigo</p>
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">¿Cómo Funciona?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>1. Obtén tu Chapita QR</h3>
+                    <p>Adquiere una chapita QR única para tu mascota en nuestra veterinaria</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>2. Registra tu Mascota</h3>
+                    <p>Escanea el QR y completa los datos de tu mascota y tu información de contacto</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>3. Localización Instantánea</h3>
+                    <p>Si tu mascota se pierde y alguien escanea el QR, recibirás su ubicación exacta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Beneficios de VetQR</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notificaciones en Tiempo Real</h3>
+                    <p>Recibe emails instantáneos cuando escaneen el QR de tu mascota</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Ubicación Precisa</h3>
+                    <p>Conoce exactamente dónde fue encontrada tu mascota gracias a la geolocalización</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Protección 24/7</h3>
+                    <p>Tu mascota estará protegida las 24 horas, los 7 días de la semana</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Privacidad Garantizada</h3>
+                    <p>Tus datos están seguros y solo se comparten cuando es necesario</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Actualización Fácil</h3>
+                    <p>Cambia tus datos de contacto en cualquier momento sin cambiar la chapita</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Tranquilidad Total</h3>
+                    <p>Descansa sabiendo que tu mascota siempre puede volver a casa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo QR -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-content">
+                <div class="demo-text">
+                    <h2>Tu Mascota Siempre Segura</h2>
+                    <p>Con nuestras chapitas QR inteligentes, perder a tu mascota ya no es un problema. Cualquier persona que la encuentre puede escanear el código y contactarte inmediatamente con la ubicación exacta.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Registro gratuito</li>
+                        <li><i class="fas fa-check"></i> Notificaciones por email</li>
+                        <li><i class="fas fa-check"></i> Ubicación en tiempo real</li>
+                        <li><i class="fas fa-check"></i> Sin costos mensuales</li>
+                    </ul>
+                </div>
+                <div class="demo-image">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="scan-animation">
+                                <i class="fas fa-qrcode"></i>
+                                <div class="scan-line"></div>
+                            </div>
+                            <p class="scan-text">Escaneando QR...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Av. Veterinaria 123, Ciudad</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+54 11 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@vetqr.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lun - Vie: 9:00 - 20:00</p>
+                            <p>Sáb: 9:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878895!2d-58.383759!3d-34.603734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM2JzEzLjQiUyA1OMKwMjMnMDEuNSJX!5e0!3m2!1ses!2sar!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <i class="fas fa-paw"></i>
+                        <span>VetQR</span>
+                    </a>
+                    <p>Tecnología inteligente para la seguridad de tus mascotas</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VetQR. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

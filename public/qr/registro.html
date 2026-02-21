@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Mascota - VetQR</title>
+    <link rel="stylesheet" href="/assets/css/qr.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="qr-page">
+        <div class="qr-container">
+            <!-- Logo -->
+            <a href="/" class="qr-logo">
+                <i class="fas fa-paw"></i>
+                <span>VetQR</span>
+            </a>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="state-container">
+                <div class="loading-spinner"></div>
+                <p>Verificando código QR...</p>
+            </div>
+
+            <!-- QR No Válido -->
+            <div id="invalid-state" class="state-container hidden">
+                <div class="state-icon error">
+                    <i class="fas fa-times-circle"></i>
+                </div>
+                <h2>Código QR No Válido</h2>
+                <p>El código QR que has escaneado no existe o ha sido desactivado.</p>
+                <a href="/" class="btn btn-primary">Volver al Inicio</a>
+            </div>
+
+            <!-- QR Ya Registrado -->
+            <div id="registered-state" class="state-container hidden">
+                <div class="state-icon info">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2>QR Ya Registrado</h2>
+                <p>Este código QR ya está asociado a una mascota.</p>
+                <p class="redirect-text">Redirigiendo a la información...</p>
+            </div>
+
+            <!-- Formulario de Registro -->
+            <div id="form-state" class="state-container hidden">
+                <div class="form-header">
+                    <div class="form-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h2>Registrar Mascota</h2>
+                    <p>Completa los datos para registrar a tu mascota con esta chapita QR</p>
+                </div>
+
+                <form id="registro-form" class="registro-form">
+                    <input type="hidden" id="codigo-qr" name="codigo_qr">
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-paw"></i> Datos de la Mascota</h3>
+                        <div class="form-group">
+                            <label for="nombre-mascota">Nombre de la Mascota *</label>
+                            <input type="text" id="nombre-mascota" name="nombre_mascota" required placeholder="Ej: Luna">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Datos del Dueño</h3>
+                        <div class="form-group">
+                            <label for="nombre-dueno">Nombre del Dueño *</label>
+                            <input type="text" id="nombre-dueno" name="nombre_dueno" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label for="email-dueno">Correo Electrónico *</label>
+                            <input type="email" id="email-dueno" name="email_dueno" required placeholder="ejemplo@email.com">
+                            <small>Recibirás notificaciones cuando escaneen el QR</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono-dueno">Teléfono</label>
+                            <input type="tel" id="telefono-dueno" name="telefono_dueno" placeholder="+54 11 1234-5678">
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion-dueno">Dirección *</label>
+                            <textarea id="direccion-dueno" name="direccion_dueno" rows="3" required placeholder="Calle, número, ciudad, provincia"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Tus datos están protegidos y solo se usarán para contactarte si tu mascota se pierde.</p>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text"><i class="fas fa-check"></i> Registrar Mascota</span>
+                        <span class="btn-loading hidden"><i class="fas fa-spinner fa-spin"></i> Registrando...</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Registro Exitoso -->
+            <div id="success-state" class="state-container hidden">
+                <div class="state-icon success">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>¡Registro Exitoso!</h2>
+                <p>Tu mascota ha sido registrada correctamente.</p>
+                <div class="success-details">
+                    <p><i class="fas fa-envelope"></i> Se ha enviado un email de confirmación a tu correo.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Si tu mascota se pierde y alguien escanea el QR, recibirás la ubicación exacta.</p>
+                </div>
+                <a href="/" class="btn btn-primary">Volver al Inicio</a>
+            </div>
+
+            <!-- Error -->
+            <div id="error-state" class="state-container hidden">
+                <div class="state-icon error">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h2>Error al Registrar</h2>
+                <p id="error-message">Ha ocurrido un error. Por favor, intenta nuevamente.</p>
+                <button onclick="retryForm()" class="btn btn-primary">Intentar de Nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/qr-registro.js"></script>
+</body>
+</html>
